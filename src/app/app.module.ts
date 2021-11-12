@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
@@ -10,6 +11,11 @@ import { DisplayComponent } from './components/display/display.component';
 import { ConfigureComponent } from './components/configure/configure.component';
 import { DeleteComponent } from './components/delete/delete.component';
 
+export const routes: Routes = [
+  { path: '', component: ConfigureComponent },
+  { path: 'configure', component: ConfigureComponent },
+  { path: 'display', component: DisplayComponent },
+];
 
 @NgModule({
   declarations: [
@@ -18,14 +24,15 @@ import { DeleteComponent } from './components/delete/delete.component';
     AddoreditComponent,
     DisplayComponent,
     ConfigureComponent,
-    DeleteComponent
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
