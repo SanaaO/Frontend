@@ -12,6 +12,8 @@ export class ConfigureComponent implements OnInit, OnDestroy {
   shapeSub!: Subscription;
   shapes: Shape[] = [];
 
+  addoreditModalOpen = false;
+
   constructor(private shapeService: ShapeServiceService) {}
 
   ngOnInit(): void {
@@ -23,6 +25,17 @@ export class ConfigureComponent implements OnInit, OnDestroy {
         console.log('Error message : ' + error.error);
       }
     );
+  }
+
+  create3Dobject() {
+    this.addoreditModalOpen = true;
+  }
+
+  storeShape(shape: Shape) {
+    this.shapeService.addShape(shape).subscribe((result) => {
+      this.shapes.push(result.data);
+    });
+    this.addoreditModalOpen = false;
   }
 
   ngOnDestroy() {

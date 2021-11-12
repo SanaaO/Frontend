@@ -1,3 +1,5 @@
+<button type="button" class="btn" (click)="create3Dobject()"> Create 3D Object</button>
+<app-addoredit *ngIf="addoreditModalOpen" (finish)="storeShape($event)"></app-addoredit>
 <clr-datagrid>
     <clr-dg-column>ID</clr-dg-column>
     <clr-dg-column>Type</clr-dg-column>
