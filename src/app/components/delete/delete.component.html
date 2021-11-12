@@ -1,1 +1,10 @@
-<p>delete works!</p>
+<clr-modal [clrModalOpen]="true" [clrModalClosable]="false">
+    <h3 class="modal-title">Delete 3D Object</h3>
+    <div class="modal-body">
+      <p>Are you sure to delete this Object ?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline" (click)="cancel()">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="confirm()">Confirm</button>
+    </div>
+  </clr-modal>

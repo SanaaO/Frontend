@@ -1,1 +1,74 @@
-<p>addoredit works!</p>
+<clr-modal [(clrModalOpen)]="ModalOpen" [clrModalClosable]="false">
+    <h3 class="modal-title">Configure 3D Object</h3>
+    <div class="modal-body">
+        <form [formGroup]="ShapeForm">
+            <clr-select-container>
+                <label>Type</label>
+                <select clrSelect [(ngModel)]="type" name="type" formControlName="type">
+                    <option *ngFor="let shape of [ 'BoxGeometry','CylinderGeometry', 'ConeGeometry', 'SphereGeometry']"
+                        [value]="shape">
+                        {{shape}}
+                    </option>
+                </select>
+            </clr-select-container>
+
+            <div formGroupName="geometry">
+
+                <clr-input-container *ngIf="type ==='BoxGeometry'">
+                    <label>Width</label>
+                    <input clrInput type="number" placeholder="width" name="width" formControlName="width" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='ConeGeometry' || type ==='SphereGeometry'">
+                    <label>Radius</label>
+                    <input clrInput type="number" placeholder="radius" name="radius" formControlName="radius" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='CylinderGeometry'">
+                    <label>RadiusTop</label>
+                    <input clrInput type="number" placeholder="radiusTop" name="radiusTop"
+                        formControlName="radiusTop" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='CylinderGeometry'">
+                    <label>RadiusButtom</label>
+                    <input clrInput type="number" placeholder="radiusButtom" name="radiusButtom"
+                        formControlName="radiusButtom" />
+                </clr-input-container>
+
+                <clr-input-container
+                    *ngIf="type ==='BoxGeometry' || type ==='ConeGeometry' || type ==='CylinderGeometry'">
+                    <label>Height</label>
+                    <input clrInput type="number" placeholder="height" name="height" formControlName="height" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='BoxGeometry'">
+                    <label>Depth</label>
+                    <input clrInput type="number" placeholder="depth" name="width" formControlName="depth" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='ConeGeometry' || type ==='CylinderGeometry'">
+                    <label>RadialSegments</label>
+                    <input clrInput type="number" placeholder="radialSegments" name="radialSegments"
+                        formControlName="radialSegments" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='SphereGeometry'">
+                    <label>WidthSegments</label>
+                    <input clrInput type="number" placeholder="widthSegments" name="widthSegments"
+                        formControlName="widthSegments" />
+                </clr-input-container>
+
+                <clr-input-container *ngIf="type ==='SphereGeometry'">
+                    <label>HeightSegments</label>
+                    <input clrInput type="number" placeholder="heightSegments" name="heightSegments"
+                        formControlName="heightSegments" />
+                </clr-input-container>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" (click)="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="addShape()">Finish</button>
+            </div>
+        </form>
+    </div>
+</clr-modal>

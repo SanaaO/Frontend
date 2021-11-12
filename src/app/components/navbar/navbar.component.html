@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<div class="main-container">
+    <!---headernav-->
+    <header class="header-1">
+        <div class="branding">
+            <a href="javascript://" class="nav-link" routerLink="./configure">
+                <span class="title">3D Objects configurator </span>
+            </a>
+        </div>
+        <div class="header-nav">
+            <a clrVerticalNavLink routerLink="./configure" routerLinkActive="active">
+                Configure
+            </a>
+            <a clrVerticalNavLink routerLink="./display" routerLinkActive="active">
+                Display
+            </a>
+        </div>
+    </header>
+    <div class="content-container">
+        <!-- content--->
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
