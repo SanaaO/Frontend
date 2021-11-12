@@ -1,1 +1,22 @@
-<p>configure works!</p>
+<clr-datagrid>
+    <clr-dg-column>ID</clr-dg-column>
+    <clr-dg-column>Type</clr-dg-column>
+    <clr-dg-column>Geometry</clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let shape of shapes ">
+
+        <clr-dg-cell>{{shape._id}}</clr-dg-cell>
+        <clr-dg-cell>{{shape.type}}</clr-dg-cell>
+        <clr-dg-cell>{{shape.geometry | json}} </clr-dg-cell>
+
+    </clr-dg-row>
+
+    <!-- Pagination -->
+    <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+            <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">shapes per page</clr-dg-page-size>
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} shapes
+        </clr-dg-pagination>
+    </clr-dg-footer>
+
+</clr-datagrid>
