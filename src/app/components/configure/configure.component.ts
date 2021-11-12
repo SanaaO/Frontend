@@ -13,6 +13,7 @@ export class ConfigureComponent implements OnInit, OnDestroy {
   shapes: Shape[] = [];
 
   addoreditModalOpen = false;
+  deleteModalOpen = false;
   selectedShape!: Shape;
 
   constructor(private shapeService: ShapeServiceService) {}
@@ -55,6 +56,21 @@ export class ConfigureComponent implements OnInit, OnDestroy {
   update3DObject(shape: Shape) {
     this.selectedShape = shape;
     this.addoreditModalOpen = true;
+  }
+
+  Delete3DObject(shape: Shape) {
+    this.selectedShape = shape;
+    this.deleteModalOpen = true;
+  }
+
+  confirmDelete() {
+    this.shapeService.delete(this.selectedShape._id).subscribe((result) => {
+      const index = this.shapes.findIndex(
+        (s) => s._id == this.selectedShape._id
+      );
+      this.shapes.splice(index, 1);
+    });
+    this.deleteModalOpen = false;
   }
 
   ngOnDestroy() {

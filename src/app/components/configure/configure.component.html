@@ -1,5 +1,6 @@
 <button type="button" class="btn" (click)="create3Dobject()"> Create 3D Object</button>
 <app-addoredit *ngIf="addoreditModalOpen" (finish)="storeShape($event)" [selectedShape]= "selectedShape"></app-addoredit>
+<app-delete *ngIf="deleteModalOpen" (finish)="confirmDelete()"></app-delete>
 <clr-datagrid>
     <clr-dg-column>ID</clr-dg-column>
     <clr-dg-column>Type</clr-dg-column>
@@ -9,6 +10,7 @@
         <!-- Action (edit or delete)-->
         <clr-dg-action-overflow>
             <button class="action-item" (click)="update3DObject(shape)">update</button>
+            <button class="action-item" (click)="Delete3DObject(shape)">delete</button>
         </clr-dg-action-overflow>
         <!-- -->
 
