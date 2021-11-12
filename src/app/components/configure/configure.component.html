@@ -1,11 +1,16 @@
 <button type="button" class="btn" (click)="create3Dobject()"> Create 3D Object</button>
-<app-addoredit *ngIf="addoreditModalOpen" (finish)="storeShape($event)"></app-addoredit>
+<app-addoredit *ngIf="addoreditModalOpen" (finish)="storeShape($event)" [selectedShape]= "selectedShape"></app-addoredit>
 <clr-datagrid>
     <clr-dg-column>ID</clr-dg-column>
     <clr-dg-column>Type</clr-dg-column>
     <clr-dg-column>Geometry</clr-dg-column>
 
     <clr-dg-row *clrDgItems="let shape of shapes ">
+        <!-- Action (edit or delete)-->
+        <clr-dg-action-overflow>
+            <button class="action-item" (click)="update3DObject(shape)">update</button>
+        </clr-dg-action-overflow>
+        <!-- -->
 
         <clr-dg-cell>{{shape._id}}</clr-dg-cell>
         <clr-dg-cell>{{shape.type}}</clr-dg-cell>
