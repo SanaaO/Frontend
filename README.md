@@ -25,7 +25,7 @@ Implement a 3D configurator tha allows to create, configure, manage 3D objetcs a
 
 - To create a new model we have to click on "Create 3D Object" button. This will open a Modal "Configure 3D object" where the user can choose a type (can be a BoxGeometry, ConeGeometry, CylinderGeometry or SphereGeometry) and enter the required parameters (geometries)
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/addType.PNG?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/addType.png?raw=true)
 
 ![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/add.PNG?raw=true)
 
@@ -37,15 +37,15 @@ Implement a 3D configurator tha allows to create, configure, manage 3D objetcs a
 
 - To visualize the animation of a 3D object, we have to select its ID and choose a color then click on display.
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/display.PNG?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/display.png?raw=true)
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cylinder.PNG?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cylinder.png?raw=true)
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/sphere.PNG?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/sphere.png?raw=true)
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cone.PNG?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cone.png?raw=true)
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cube.PNG?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cube.png?raw=true)
 
 #### Perspectives 
 - Animation of an object on mouse click
