@@ -1,1 +1,23 @@
-<p>display works!</p>
+<div class="card">
+    <div class="card-block">
+        <h4 class="card-title">Choose 3D Object to Display</h4>
+        <clr-select-container>
+            <label>Select 3D Object ID</label>
+            <select clrSelect [(ngModel)]="selectedID" name="selectedID">
+                <option *ngFor="let shape of shapes" [value]="shape._id">
+                    {{shape._id}}
+                </option>
+            </select>
+        </clr-select-container>
+
+        <clr-input-container>
+            <label>Select Color</label>
+            <input clrInput [(ngModel)]="color" type="color" id="color" name="color" value="#e66465">
+        </clr-input-container>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="DisplayObject()">Display</button>
+        </div>
+    </div>
+</div>
+<canvas #canvas id="canvas" style="height: 100%; width: 100%;"></canvas>

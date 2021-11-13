@@ -51,13 +51,15 @@ export class AddoreditComponent implements OnInit, OnChanges {
     }
   }
 
-  cancel() {
-    this.finish.emit();
-  }
   addShape() {
     var shape: Shape = { ...this.ShapeForm.value };
     var geometry = { ...this.ShapeForm.get('geometry')?.value };
 
+    for (var property in geometry) {
+      if (geometry[property] === null || geometry[property] === undefined) {
+        delete geometry[property];
+      }
+    }
     shape.geometry = geometry;
     this.finish.emit(shape);
   }
@@ -78,5 +80,9 @@ export class AddoreditComponent implements OnInit, OnChanges {
         heightSegments: this.selectedShape.geometry.heightSegments,
       },
     });
+  }
+
+  cancel() {
+    this.finish.emit();
   }
 }

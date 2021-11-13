@@ -14,7 +14,7 @@ export class ConfigureComponent implements OnInit, OnDestroy {
 
   addoreditModalOpen = false;
   deleteModalOpen = false;
-  selectedShape!: Shape;
+  selectedShape: any;
 
   constructor(private shapeService: ShapeServiceService) {}
 
@@ -30,6 +30,7 @@ export class ConfigureComponent implements OnInit, OnDestroy {
   }
 
   create3Dobject() {
+    this.selectedShape = undefined;
     this.addoreditModalOpen = true;
   }
 
