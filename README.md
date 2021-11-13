@@ -45,7 +45,7 @@ Implement a 3D configurator tha allows to create, configure, manage 3D objetcs a
 
 ![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cone.png?raw=true)
 
-![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/cube.png?raw=true)
+![alt text](https://github.com/SanaaO/Frontend/blob/Initilize_project/src/assets/images/box.png?raw=true)
 
 #### Perspectives 
 - Animation of an object on mouse click
