@@ -1,27 +1,54 @@
-# Configurator
+####  3D configurator Frontend application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+Implement a 3D configurator tha allows to create, configure, manage 3D objetcs and shows a 3D visualization (animation) of a selected object based on it's configuration data retrieved from database.
+- 3D object can be a BoxGeometry, ConeGeometry, CylinderGeometry or SphereGeometry.
+- Link to [*Backend application*](https://github.com/SanaaO/Backend)
+-  Used [*Clarity*](https://clarity.design/get-started/) for design
+-  Used [*Theree.js*](https://clarity.design/get-started/) JavaScript library for 3D visualization
 
-## Development server
+####  Done features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [x] Create 3D object and store it in database
+- [x] List all 3D objects stored in database
+- [x] Select an Object and modify its properties(geometry)
+- [x] Store updates in database
+- [x] Select an object and visualize its 3D render
+- [x] Select an object and delete it from database
 
-## Code scaffolding
+#### Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#####  - Configure Interface
 
-## Build
+- Configure interface where user can list all the 3D objects stored in database
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/ListOfObjects.png?raw=true)
 
-## Running unit tests
+- To create a new model we have to click on "Create 3D Object" button. This will open a Modal "Configure 3D object" where the user can choose a type (can be a BoxGeometry, ConeGeometry, CylinderGeometry or SphereGeometry) and enter the required parameters (geometries)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/addType.png?raw=true)
 
-## Running end-to-end tests
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/add.png?raw=true)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- User can  also  update or delete a selected object using the same interface
 
-## Further help
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/update_delete.png?raw=true)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##### - Display Interface
+
+- To visualize the animation of a 3D object, we have to select its ID and choose a color then click on display.
+
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/display.png?raw=true)
+
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/cylinder.png?raw=true)
+
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/sphere.png?raw=true)
+
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/cone.png?raw=true)
+
+![alt text](https://github.com/SanaaO/Frontend/tree/Initilize_project/src/assets/images/cube.png?raw=true)
+
+#### Perspectives 
+- Animation of an object on mouse click
+- Optimise the display of the object's informations
+- Add a user defined name for each object and use it for selection (instead of ID)
+- Include Meshing features (Mesh object, Mesh type, Mesh size...)
