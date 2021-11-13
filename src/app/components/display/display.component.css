@@ -1,0 +1,5 @@
+.card {
+    margin: 10 auto; /* Added */
+    margin-bottom: 10px; /* Added */
+    width: 40%
+  }
