@@ -95,6 +95,13 @@ export class DisplayComponent implements OnInit {
       //create 3D object (Mesh)
       this.Object_3D = new THREE.Mesh(this.geometry, this.material);
 
+      //add edges lines to 3D object
+      const edges = new THREE.EdgesGeometry(this.geometry);
+      this.lines = new THREE.LineSegments(
+        edges,
+        new THREE.LineBasicMaterial({ color: 0x000000 })
+      );
+
       //dislay
       this.createScene();
       this.startRenderingLoop();
@@ -115,11 +122,6 @@ export class DisplayComponent implements OnInit {
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color('#F2F2F2');
 
-    const edges = new THREE.EdgesGeometry(this.geometry);
-    this.lines = new THREE.LineSegments(
-      edges,
-      new THREE.LineBasicMaterial({ color: 0x000000 })
-    );
     this.scene.add(this.Object_3D, this.lines);
     //Camera
     let aspectRatio = this.getAspectRatio();
